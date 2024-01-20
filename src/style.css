@@ -23,3 +23,22 @@ body {
   box-shadow: 0 30px 50px rgba(65, 50, 100, 0.08);
   border-radius: 16px;
 }
+
+.search-form-input {
+  background-color: #ece4f0;
+  border: none;
+  border-radius: 6px;
+  width: 80%;
+  font-size: 16px;
+  padding: 15px 20px;
+}
+
+.search-form-button {
+  background-color: #a274cd;
+  padding: 15px 20px;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  margin-left: 10px;
+  font-size: 16px;
+}
