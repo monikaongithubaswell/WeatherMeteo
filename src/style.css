@@ -74,8 +74,9 @@ main {
 }
 
 .temp-icon {
-  font-size: 44px;
-  margin-top: 22px;
+  width: 92px;
+  height: 92px;
+  margin-top: 15px;
 }
 
 .temp-value {
