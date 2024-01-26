@@ -90,6 +90,24 @@ main {
   margin-top: 16px;
 }
 
+.weater-forecast {
+  margin-top: 20px;
+  text-align: center;
+  display: flex;
+}
+.weather-forecast-date {
+  font-size: 16px;
+  color: rgb(40, 39, 39);
+}
+
+.weather-forecast-temperature {
+  font-size: 13px;
+  color: rgb(40, 39, 39);
+}
+
+.forecast-minimum {
+  color: rgb(106, 105, 105);
+}
 footer {
   border-top: 1px solid #ece4f0;
   padding: 20px 0 0 0;
