@@ -54,3 +54,29 @@ let searchFormElement = document.querySelector("#search-form");
 searchFormElement.addEventListener("submit", handleSearchSubmit);
 
 searchCity("Brussels");
+
+function displayForecast() {
+  let forecast = document.querySelector("#forecast");
+
+  let days = ["tue", "wed", "thu", "fri", "sat"];
+  let forecastHtml = "";
+
+  days.forEach(function (day) {
+    forecastHtml =
+      forecastHtml +
+      `
+       <div class="weather-forecast-day">
+        <div class="weather-forecast-date">${day}</div>
+        <div class="forecast-icon">🌤️</div>
+        <div class="weather-forecast-temperatures">
+        <span class="weather-forecast-temperature">
+            <strong>15º</strong></span><span>9º</span>
+          
+        </div>
+      </div>`;
+  });
+
+  forecastElement.innerHTML = forecastHtml;
+}
+
+displayForecast();
