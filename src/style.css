@@ -1,7 +1,5 @@
 html {
   height: 100%;
-}
-body {
   background-size: 100%;
   margin: 0;
   background-repeat: no-repeat;
@@ -12,6 +10,8 @@ body {
     rgba(204, 247, 237, 1) 48%,
     rgba(244, 255, 251, 1) 100%
   );
+}
+body {
   font-family: "Oswald", sans-serif;
 }
 .weather-app {
