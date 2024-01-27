@@ -16,6 +16,8 @@ function refreshWeather(response) {
   descriptionElement.innerHTML = response.data.condition.description;
   cityElement.innerHTML = response.data.city;
   tempElement.innerHTML = Math.round(temperature);
+
+  getForecast(response.data.city);
 }
 
 function formatDate(date) {
@@ -44,19 +46,23 @@ function searchCity(city) {
   axios.get(apiUrl).then(refreshWeather);
 }
 
+let searchFormElement = document.querySelector("#search-form");
+searchFormElement.addEventListener("submit", handleSearchSubmit);
+
 function handleSearchSubmit(event) {
   event.preventDefault();
   let searchInput = document.querySelector("#search-form-input");
   searchCity(searchInput.value);
 }
 
-let searchFormElement = document.querySelector("#search-form");
-searchFormElement.addEventListener("submit", handleSearchSubmit);
+function getForecast(city) {
+  let apiKey = "221ba606t5adabe4e4f1018c33o36dff";
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
+  axios(apiUrl).then(displayForecast);
+}
 
-searchCity("Brussels");
-
-function displayForecast() {
-  let forecast = document.querySelector("#forecast");
+function displayForecast(response) {
+  console.log(response.data);
 
   let days = ["tue", "wed", "thu", "fri", "sat"];
   let forecastHtml = "";
@@ -76,7 +82,9 @@ function displayForecast() {
       </div>`;
   });
 
+  let forecastElement = document.querySelector("#forecast");
+
   forecastElement.innerHTML = forecastHtml;
 }
 
-displayForecast();
+searchCity("Brussels");
